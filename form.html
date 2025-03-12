@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulier</title>
+</head>
+<body>
+    <form method="POST">
+        <label for="naam">Naam:</label>
+        <input type="text" id="naam" name="naam" required><br>
+
+        <label for="mobiel_nr">Mobiel nr:</label>
+        <input type="text" id="mobiel_nr" name="mobiel_nr" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="geboortedatum">Geboortedatum:</label>
+        <input type="date" id="geboortedatum" name="geboortedatum" required><br>
+
+        <label for="trainingsjaren">Trainingsjaren:</label>
+        <input type="number" id="trainingsjaren" name="trainingsjaren" required><br>
+
+        <label for="aantal_trainingen_per_week">Aantal trainingen per week:</label>
+        <input type="number" id="aantal_trainingen_per_week" name="aantal_trainingen_per_week" required><br>
+
+        <label for="aantal_uren_training_per_week">Aantal uren training per week:</label>
+        <input type="number" id="aantal_uren_training_per_week" name="aantal_uren_training_per_week" required><br>
+
+        <label for="beschikbaarheid">Beschikbaarheid:</label>
+        <select id="beschikbaarheid" name="beschikbaarheid" required>
+            {% for slot in available_slots %}
+                <option value="{{ slot }}">{{ slot }}</option>
+            {% endfor %}
+        </select><br>
+
+        <button type="submit">Verzenden</button>
+    </form>
+</body>
+</html>
