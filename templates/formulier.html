@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainingsformulier</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        label { display: block; margin-top: 10px; }
+        select, input { width: 100%; padding: 8px; margin-top: 5px; }
+        button { background-color: blue; color: white; padding: 10px; margin-top: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Trainingsformulier</h2>
+    <form method="POST">
+        <label>Naam:</label>
+        <input type="text" name="naam" required>
+
+        <label>Mobiel nr:</label>
+        <input type="text" name="mobiel" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <label>Geboortedatum:</label>
+        <input type="date" name="geboortedatum" required>
+
+        <label>Trainingsjaren:</label>
+        <input type="number" name="trainingsjaren" required>
+
+        <label>Aantal trainingen per week:</label>
+        <input type="number" name="trainingen_per_week" required>
+
+        <label>Aantal uren training per week:</label>
+        <input type="number" name="uren_per_week" required>
+
+        <label>Beschikbare tijdslots:</label>
+        <select name="beschikbaarheid" required>
+            {% for tijd in beschikbare_tijden %}
+            <option value="{{ tijd }}">{{ tijd }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Versturen</button>
+    </form>
+</body>
+</html>
